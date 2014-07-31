@@ -9,45 +9,46 @@
 
 var className = 'esc-lead-article-title-wrapper';
 var elements = document.getElementsByClassName(className);
-console.log(elements[0]);
-console.log("hello world why don't you work");
-var hideDiv = document.createElement('h2');
-var hideDivClassName = 'esc-lead-article-title';
-// hideDiv.setAttribute('class', hideDivClassName);
-var hideElement = document.createElement('a');
+var elementCount = elements.length;
 
-hideElement.class = "MyClassName";
-var text = document.createTextNode("HIDE NEWS");
+for (var j = 0; j < elementCount; j += 1) {
+    var element = elements[j];
+    var hideDiv = document.createElement('h2');
+    var hideDivClassName = 'esc-lead-article-title';
+    // hideDiv.setAttribute('class', hideDivClassName);
+    var hideElement = document.createElement('a');
 
-elements[0].appendChild(hideDiv);
-hideDiv.appendChild(hideElement);
-hideElement.appendChild(text);
+    hideElement.class = "MyClassName";
+    var text = document.createTextNode("HIDE NEWS");
+
+    element.appendChild(hideDiv);
+    hideDiv.appendChild(hideElement);
+    hideElement.appendChild(text);
 
 
-var didClickHide = false;
-hideElement.onclick = function(e) {
-    e.stopPropagation();
-    var divToRemove = elements[0];
-    for (var i = 0; i < 4; i += 1) {
-        console.log(divToRemove);
-        if (divToRemove.parentNode != null) {
-            divToRemove = divToRemove.parentNode;
-        }
-        console.log(i);
-    }
-    console.log("HElLO WORLD");
-    console.log(divToRemove);
-    if (divToRemove != null) {
-        console.log("did find something to remove");
-    } else {
-        console.log("nothing to remove");
-    }
-    while (divToRemove.firstChild) {
-        divToRemove.removeChild(divToRemove.firstChild);
-    }
-    didClickHide = true;
-    e.stopPropagation();
-};
+    var didClickHide = false;
+
+    hideElement.onclick = function(hE) {
+        return function(e) {
+            e.stopPropagation();
+
+            var divToRemove = hE;
+
+            for (var i = 0; i < 10; i += 1) {
+                console.log(divToRemove);
+                if (divToRemove.parentNode != null) {
+                    divToRemove = divToRemove.parentNode;
+                }
+            }
+            console.log(divToRemove);
+            while (divToRemove.firstChild) {
+                divToRemove.removeChild(divToRemove.firstChild);
+            }
+            didClickHide = true;
+            e.stopPropagation();
+        }; 
+    } (hideElement);
+}
 
 // window.onbeforeunload = function() {
 //   if (didClickHide) {
@@ -56,5 +57,4 @@ hideElement.onclick = function(e) {
 //     return;
 //   }
 // };
-
 
