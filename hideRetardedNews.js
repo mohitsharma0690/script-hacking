@@ -46,7 +46,7 @@ for (var j = 0; j < elementCount; j += 1) {
             }
             didClickHide = true;
             e.stopPropagation();
-        }; 
+        };
     } (hideElement);
 }
 
