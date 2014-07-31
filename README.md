@@ -10,8 +10,6 @@ to actually hide that news. In case you reload the page the news item would appe
 again. To do the latter you need to persist that information somewhere and for now 
 this is just a greasemonkey script.
 
-![Gif](https://www.dropbox.com/s/wxljzdc0pthv08g/hideGoogleNews.gif)
-
 #### Remove FB Feed
 Removes feed from the fb page.
 
