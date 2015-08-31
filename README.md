@@ -13,3 +13,5 @@ this is just a greasemonkey script.
 #### Remove FB Feed
 Removes feed from the fb page.
 
+#### Trim Trailing Space
+Removes trailing space from all the files in your current index. 
