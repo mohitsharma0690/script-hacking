@@ -20,8 +20,8 @@ plt.rcParams['image.cmap'] = 'Blues'
 # sns.set_style("ticks")
 # for auto-reloading external modules
 # see http://stackoverflow.com/questions/1907993/autoreload-of-modules-in-ipython
-%load_ext autoreload
-%autoreload 2
+# %load_ext autoreload
+# %autoreload 2
 
 def plot_multiple_likelhood_values(likelihood_arr, time_axis=0, 
                                    x=None, save_path='',
